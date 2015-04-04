@@ -52,11 +52,8 @@ body {
 }
 
 /*** slideshow ***/
-.slideshow {
-    background-image: url("images/slideshow/16354034274_d141d2be06_k.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.gallery {
+    z-index:-1;
 }
 
 /*** footer general ***/
