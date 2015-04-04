@@ -48,19 +48,19 @@ for ($i = 1;$i < 6;$i++) {
             <li>
                 <img src="./images/collections/15683460864_9091c86743_q.jpg"/>
                 <span class="caption simple-caption">
-                    <p>tiles 1</p>
+                    <p>concert</p>
                 </span>
             </li>
             <li>
                 <img src="./images/collections/16133722758_53ccf0279f_q.jpg"/>
                 <span class="caption simple-caption">
-                    <p>tiles 2</p>
+                    <p>studio</p>
                 </span>
             </li>
             <li>
                 <img src="./images/collections/16892810316_0eaa62f27d_q.jpg"/>
                 <span class="caption simple-caption">
-                    <p>tiles 3</p>
+                    <p>fashion</p>
                 </span>
             </li>
         </ul>

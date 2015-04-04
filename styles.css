@@ -61,6 +61,7 @@ body {
     position:fixed;
     bottom:0;
     width: 100%;
+    height: 250px;
     overflow-y: hidden;
     box-sizing: border-box;
     text-align:center;
@@ -78,14 +79,39 @@ body {
     position: relative;
     display: inline-block;
     margin: 12px;
+    cursor: pointer;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
 }
 
 .tiles li img {
-    opacity:1;
+    position: absolute;
+    left: 0;
+    height: 200px;
+    width: 200px;
+    transition: all 300ms ease-out;
 }
 
-.tiles .title {
+.tiles li .caption {
+    background-color: rgba(70, 70, 70, 0.8);
+    border-top:1px solid #888;
     color: #888;
-    font-size:13px;
-    padding-top: 5px;
+    font-size:20px;
+    font-weight:normal;
+
+    position: absolute;
+    left: 0;
+    height: 50px;
+    width: 200px;
+    bottom: -51px;
+    display: block;
+    line-height: 35pt;
+    text-align: center;
+
+    transition: all 300ms ease-out;
+}
+
+.tiles li:hover .caption {
+    transform: translateY(-100%);
 }
