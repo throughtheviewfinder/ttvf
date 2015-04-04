@@ -1,0 +1,94 @@
+/*** reset ***/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/*** general layout ***/
+html, body, .slideshow {
+    width: 100%;
+    height: 100%;
+}
+
+/*** global font settings ***/
+body {
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    font-weight:lighter;
+}
+
+/*** header ***/
+.header{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:150px;
+}
+
+.header .logo {
+    position: absolute;
+    top:0;
+    left:0;
+
+    font-size:40px;
+    color:#888;
+    padding:20px;
+}
+
+.header .navigation {
+    position: absolute;
+    top:0;
+    right:0;
+    padding:20px;
+}
+
+.header .navigation a {
+    padding:0 5px;
+    font-size:16px;
+    color:#888;
+    text-decoration:none;
+}
+
+/*** slideshow ***/
+.slideshow {
+    background-image: url("images/slideshow/16354034274_d141d2be06_k.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*** footer general ***/
+.footer {
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    text-align:center;
+
+    background: rgba(70, 70, 70, .7);
+    border-top:1px solid #888;
+}
+
+/*** tiles styling ***/
+.tiles {
+    margin:10px auto;
+}
+
+.tiles li {
+    position: relative;
+    display: inline-block;
+    margin: 12px;
+}
+
+.tiles li img {
+    opacity:1;
+}
+
+.tiles .title {
+    color: #888;
+    font-size:13px;
+    padding-top: 5px;
+}
