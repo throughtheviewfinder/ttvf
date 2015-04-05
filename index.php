@@ -23,17 +23,14 @@ function readConfFile($path)
     return $r;
 }
 
-$images = [
-    "images/slideshow/16354034274_d141d2be06_k.jpg",
-    "images/slideshow/16835977820_306590d775_k.jpg",
-    "images/slideshow/17007939581_1bce7b0050_k.jpg",
-    "images/slideshow/16835781358_2243f027ef_k.jpg",
-    "images/slideshow/16261971583_a7b45b934b_k.jpg"
-];
+const NUM_IMAGES = 5;
+$images = readConfFile('./content/slideshow.csv');
+shuffle($images);
+$images = array_slice($images, 0, NUM_IMAGES);
 
 $slideShowCSS = '';
-for ($i = 1;$i < 6;$i++) {
-    $slideShowCSS .= '.gallery-image-' . $i . ' { background-image: url("' . $images[$i - 1] . '"); }' . "\n";
+for ($i = 1;$i < NUM_IMAGES + 1;$i++) {
+    $slideShowCSS .= '.gallery-image-' . $i . ' { background-image: url("./images/slideshow/' . $images[$i - 1][0] . '"); }' . "\n";
 }
 
 $categories = readConfFile('./content/tiles.csv');
