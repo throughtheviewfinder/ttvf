@@ -1,4 +1,28 @@
 <?php
+
+function readConfFile($path)
+{
+    if(!file_exists($path))
+        throw new Exception('ERROR reading config file! ' . $path);
+
+    $fc = file_get_contents($path);
+    $lines = explode("\n", $fc);
+
+    if(count($lines) === 0)
+        throw new Exception('ERROR! empty conf file!' . $path);
+
+    $r = array();
+    foreach($lines as $line)
+    {
+        if (!empty($line))
+        {
+            $r[] = str_getcsv($line);
+        }
+    }
+
+    return $r;
+}
+
 $images = [
     "images/slideshow/16354034274_d141d2be06_k.jpg",
     "images/slideshow/16835977820_306590d775_k.jpg",
@@ -11,6 +35,8 @@ $slideShowCSS = '';
 for ($i = 1;$i < 6;$i++) {
     $slideShowCSS .= '.gallery-image-' . $i . ' { background-image: url("' . $images[$i - 1] . '"); }' . "\n";
 }
+
+$categories = readConfFile('./content/tiles.csv');
 
 ?>
 <html>
@@ -45,24 +71,13 @@ for ($i = 1;$i < 6;$i++) {
 
     <div class="footer">
         <ul class="tiles">
-            <li>
-                <img src="./images/collections/15683460864_9091c86743_q.jpg"/>
-                <span class="caption simple-caption">
-                    <p>concert</p>
-                </span>
-            </li>
-            <li>
-                <img src="./images/collections/16133722758_53ccf0279f_q.jpg"/>
-                <span class="caption simple-caption">
-                    <p>studio</p>
-                </span>
-            </li>
-            <li>
-                <img src="./images/collections/16892810316_0eaa62f27d_q.jpg"/>
-                <span class="caption simple-caption">
-                    <p>fashion</p>
-                </span>
-            </li>
+            <?php
+            foreach(readConfFile('./content/tiles.csv') as $tileConfig) {
+                print '<li>';
+                print '<img src="images/tiles/' . $tileConfig[1] . '"/>';
+                print '<span class="caption simple-caption"><p>' . $tileConfig[0] . '</p></span>';
+            }
+            ?>
         </ul>
     </div>
 
